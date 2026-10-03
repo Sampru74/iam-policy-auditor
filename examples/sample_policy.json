@@ -1,0 +1,23 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "BroadStorageAccess",
+      "Effect": "Allow",
+      "Action": "s3:*",
+      "Resource": "arn:aws:s3:::demo-bucket/*"
+    },
+    {
+      "Sid": "CredentialManagement",
+      "Effect": "Allow",
+      "Action": "iam:CreateAccessKey",
+      "Resource": "arn:aws:iam::123456789012:user/demo-user"
+    },
+    {
+      "Sid": "ScopedReadOnly",
+      "Effect": "Allow",
+      "Action": "s3:GetObject",
+      "Resource": "arn:aws:s3:::demo-bucket/reports/*"
+    }
+  ]
+}
